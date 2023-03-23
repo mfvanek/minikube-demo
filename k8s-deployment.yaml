@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minikube-demo
+spec:
+  selector:
+    matchLabels:
+      app: minikube-demo
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: minikube-demo
+    spec:
+      containers:
+        - name: minikube-demo
+          image: io.github.mfvanek/minikube-demo:0.0.4
+          imagePullPolicy: Never
+          ports:
+            - name: application
+              containerPort: 8080
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: application
+            initialDelaySeconds: 20
+            periodSeconds: 10
+            timeoutSeconds: 5
+            successThreshold: 1
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              # path: /actuator/health/readiness
+              path: /actuator/health
+              port: application
+            initialDelaySeconds: 20
+            periodSeconds: 10
+            timeoutSeconds: 8
+            successThreshold: 2
+            failureThreshold: 5
+          resources:
+            limits:
+              cpu: 500m
+              memory: 512Mi
+            requests:
+              cpu: 200m
+              memory: 256Mi
