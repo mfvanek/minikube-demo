@@ -9,13 +9,13 @@ curl -X PUT http://localhost:8080/delay -H "Content-Type: application/json" -d '
 
 ## Build docker image
 ## With curl
-./gradlew docker
+./gradlew dockerBuildImage
 
 ### Lightweight image
 ./gradlew bootBuildImage --imageName=io.github.mfvanek/minikube-demo:0.0.1
 
 ## Run in Docker
-docker run -d -p 8080:8080 -t io.github.mfvanek/minikube-demo:0.0.2
+docker run -d -p 8080:8080 -t io.github.mfvanek/minikube-demo:latest
 
 ## Load image to minikube
 minikube image load io.github.mfvanek/minikube-demo:0.0.4
