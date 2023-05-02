@@ -19,5 +19,7 @@ public class DelayManagementController {
         return ResponseEntity.ok(healthManageService.setDelay(delayDto.newDelayInSeconds()));
     }
 
-    public record DelayDto(long newDelayInSeconds) {}
+    public record DelayDto(long newDelayInSeconds) {
+
+    }
 }
