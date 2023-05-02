@@ -1,13 +1,11 @@
 package io.github.mfvanek.minikubedemo;
 
+import io.github.mfvanek.minikubedemo.support.TestBase;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-class MinikubeDemoApplicationTests {
+class MinikubeDemoApplicationTests extends TestBase {
 
-	@Test
-	void contextLoads() {
-	}
-
+    @Test
+    void contextLoads() {
+    }
 }
