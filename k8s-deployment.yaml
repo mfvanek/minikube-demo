@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: minikube-demo
-          image: io.github.mfvanek/minikube-demo:0.0.7
+          image: io.github.mfvanek/minikube-demo:0.0.8
           imagePullPolicy: Never
           ports:
             - name: application
@@ -27,7 +27,7 @@ spec:
             httpGet:
               path: /actuator/health/liveness
               port: actuator
-            initialDelaySeconds: 1
+            initialDelaySeconds: 0
             periodSeconds: 5
             timeoutSeconds: 4
             successThreshold: 1
@@ -36,7 +36,7 @@ spec:
             httpGet:
               path: /readyz
               port: application
-            initialDelaySeconds: 1
+            initialDelaySeconds: 0
             periodSeconds: 5
             timeoutSeconds: 4
             successThreshold: 2
@@ -45,15 +45,15 @@ spec:
             httpGet:
               path: /actuator/health/liveness
               port: actuator
-            initialDelaySeconds: 20
+            initialDelaySeconds: 10
             periodSeconds: 5
             timeoutSeconds: 4
             successThreshold: 1
-            failureThreshold: 10
+            failureThreshold: 50
           resources:
             limits:
-              cpu: 200m
+              cpu: 100m
               memory: 256Mi
             requests:
-              cpu: 200m
+              cpu: 100m
               memory: 256Mi
