@@ -70,7 +70,7 @@ minikube dashboard
 
 ## Load image to minikube
 ```shell
-minikube image load io.github.mfvanek/minikube-demo:0.0.8
+minikube image load io.github.mfvanek/minikube-demo:0.0.11
 ```
 
 ```shell
@@ -79,7 +79,7 @@ minikube image ls --format table
 
 ## Run pod
 ```shell
-minikube kubectl -- run minikube-demo --image=io.github.mfvanek/minikube-demo:0.0.6 --port=8080 --image-pull-policy Never
+minikube kubectl -- run minikube-demo --image=io.github.mfvanek/minikube-demo:0.0.9 --port=8080 --image-pull-policy Never
 minikube kubectl -- get pods
 minikube kubectl -- delete pod minikube-demo
 ```

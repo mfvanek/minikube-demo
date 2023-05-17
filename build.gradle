@@ -7,7 +7,7 @@ plugins {
 }
 
 group = 'io.github.mfvanek'
-version = '0.0.8'
+version = '0.0.11'
 
 java {
   sourceCompatibility = JavaVersion.VERSION_11
@@ -52,7 +52,9 @@ springBoot {
 
 docker {
   javaApplication {
-    baseImage = 'eclipse-temurin:11.0.19_7-jre-focal'
+    //baseImage = 'eclipse-temurin:11.0.19_7-jre-focal'
+    //baseImage = 'eclipse-temurin:17.0.7_7-jre-focal'
+    baseImage = 'eclipse-temurin:20.0.1_9-jre'
     maintainer = 'Ivan Vakhrushev'
     images = ["${project.group}/${project.name}:${project.version}", "${project.group}/${project.name}:latest"]
   }
