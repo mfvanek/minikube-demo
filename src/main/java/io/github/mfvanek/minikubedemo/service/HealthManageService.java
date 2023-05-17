@@ -26,9 +26,13 @@ public class HealthManageService {
         return delayInSeconds.getAndSet(newDelayInSeconds);
     }
 
+    public long getCurrentDelay() {
+        return delayInSeconds.get();
+    }
+
     @SneakyThrows
     public void doDelayBeforeAnswer() {
-        final long currentDelay = delayInSeconds.get();
+        final long currentDelay = getCurrentDelay();
         if (currentDelay > 0) {
             log.debug("Delay of {} seconds", currentDelay);
             TimeUnit.SECONDS.sleep(currentDelay);
