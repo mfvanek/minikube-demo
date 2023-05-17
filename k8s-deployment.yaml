@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: minikube-demo
-          image: io.github.mfvanek/minikube-demo:0.0.11
+          image: io.github.mfvanek/minikube-demo:0.0.14
           imagePullPolicy: Never
           ports:
             - name: application
