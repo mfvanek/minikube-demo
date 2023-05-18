@@ -70,7 +70,7 @@ minikube dashboard
 
 ## Load image to minikube
 ```shell
-minikube image load io.github.mfvanek/minikube-demo:0.0.14
+minikube image load io.github.mfvanek/minikube-demo:0.1.3
 ```
 
 ```shell
