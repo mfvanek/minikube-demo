@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: minikube-demo
-  replicas: 3
+  replicas: 4
   template:
     metadata:
       labels:
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: minikube-demo
-          image: io.github.mfvanek/minikube-demo:0.0.14
+          image: io.github.mfvanek/minikube-demo:0.1.3
           imagePullPolicy: Never
           ports:
             - name: application
