@@ -3,6 +3,8 @@ package io.github.mfvanek.minikubedemo;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import io.github.mfvanek.minikubedemo.support.TestBase;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import javax.annotation.Nonnull;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -44,6 +46,7 @@ class ActuatorEndpointTest extends TestBase {
                 .path(endpointName)
                 .build())
             .accept(MediaType.valueOf(mediaType))
+            .acceptCharset(StandardCharsets.UTF_8)
             .exchange()
             .expectStatus().isOk()
             .expectBody(String.class)
