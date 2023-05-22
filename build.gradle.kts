@@ -35,7 +35,7 @@ dependencies {
   }
 }
 
-test {
+tasks.withType<Test>().configureEach {
   useJUnitPlatform()
 }
 
@@ -45,8 +45,8 @@ springBoot {
 
 docker {
   javaApplication {
-    baseImage = "eclipse-temurin:17.0.7_7-jre-focal"
-    maintainer = "Ivan Vakhrushev"
-    images = ["${project.group}/${project.name}:${project.version}", "${project.group}/${project.name}:latest"]
+    baseImage.set("eclipse-temurin:17.0.7_7-jre-focal")
+    maintainer.set("Ivan Vakhrushev")
+    images.set(listOf("${project.group}/${project.name}:${project.version}", "${project.group}/${project.name}:latest"))
   }
 }
