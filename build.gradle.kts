@@ -45,8 +45,12 @@ springBoot {
 
 docker {
   javaApplication {
-    baseImage.set("eclipse-temurin:17.0.7_7-jre-focal")
+    baseImage.set("eclipse-temurin:17.0.7_7-jre-focal") // G1GC by default everywhere
+    // baseImage.set("amazoncorretto:17.0.6")
+    // baseImage.set("azul/zulu-openjdk:17.0.5")
+    // baseImage.set("bellsoft/liberica-openjdk-alpine:17.0.7-7")
     maintainer.set("Ivan Vakhrushev")
+    jvmArgs.set(listOf("-XX:+PrintFlagsFinal"))
     images.set(listOf("${project.group}/${project.name}:${project.version}", "${project.group}/${project.name}:latest"))
   }
 }
