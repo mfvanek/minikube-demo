@@ -28,7 +28,17 @@ curl -X PUT http://localhost:8080/delay -H "Content-Type: application/json" -d '
 
 ## Run in Docker
 ```shell
-docker run -d -p 8080:8080 -t io.github.mfvanek/minikube-demo:latest
+docker run --name minikube-demo -d -p 8080:8080 -t io.github.mfvanek/minikube-demo:latest
+```
+
+### Show logs
+```shell
+docker logs minikube-demo
+```
+
+### Remove container
+```shell
+docker rm -f minikube-demo
 ```
 
 ## Prepare minikube
