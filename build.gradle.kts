@@ -50,7 +50,7 @@ docker {
     // baseImage.set("azul/zulu-openjdk:17.0.5")
     // baseImage.set("bellsoft/liberica-openjdk-alpine:17.0.7-7")
     maintainer.set("Ivan Vakhrushev")
-    jvmArgs.set(listOf("-XX:+PrintFlagsFinal"))
+    jvmArgs.set(listOf("-XX:+PrintFlagsFinal", "-XX:ActiveProcessorCount=2"))
     images.set(listOf("${project.group}/${project.name}:${project.version}", "${project.group}/${project.name}:latest"))
   }
 }
