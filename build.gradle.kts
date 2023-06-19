@@ -20,7 +20,7 @@ repositories {
 }
 
 dependencies {
-  implementation("io.micrometer:micrometer-registry-prometheus:1.11.0")
+  implementation("io.micrometer:micrometer-registry-prometheus:1.11.1")
   implementation("org.springframework.boot:spring-boot-starter-web")
   implementation("org.springframework.boot:spring-boot-starter-actuator")
   implementation("com.google.code.findbugs:jsr305:3.0.2")
