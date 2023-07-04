@@ -4,7 +4,7 @@ plugins {
   id("io.spring.dependency-management") version "1.1.0"
   id("com.bmuschko.docker-java-application") version "9.3.1"
   id("com.google.osdetector") version "1.7.3"
-  id("io.freefair.lombok") version "8.0.1"
+  id("io.freefair.lombok") version "8.1.0"
 }
 
 group = "io.github.mfvanek"
