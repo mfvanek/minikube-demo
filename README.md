@@ -15,6 +15,21 @@ curl -X GET http://localhost:8080/readyz
 curl -X PUT http://localhost:8080/delay -H "Content-Type: application/json" -d '{"newDelayInSeconds": 2}'
 ```
 
+## Custom workload endpoint
+```shell
+curl -X GET "http://localhost:8080/api/v1/workload/now?delay=10"
+```
+
+### Run Gatling
+```shell
+./gradlew gatlingRun
+```
+
+Or with custom params:
+```shell
+./gradlew gatlingRun -Drps=2 -DdurationSec=15 -DhostName=http://localhost:8080
+```
+
 ## Build docker image
 ## With curl
 ```shell
@@ -80,7 +95,7 @@ minikube dashboard
 
 ## Load image to minikube
 ```shell
-minikube image load io.github.mfvanek/minikube-demo:0.1.6
+minikube image load io.github.mfvanek/minikube-demo:0.2.1
 ```
 
 ```shell
@@ -89,7 +104,7 @@ minikube image ls --format table
 
 ## Run pod
 ```shell
-minikube kubectl -- run minikube-demo --image=io.github.mfvanek/minikube-demo:0.0.9 --port=8080 --image-pull-policy Never
+minikube kubectl -- run minikube-demo --image=io.github.mfvanek/minikube-demo:0.0.1 --port=8080 --image-pull-policy Never
 minikube kubectl -- get pods
 minikube kubectl -- delete pod minikube-demo
 ```
@@ -101,4 +116,9 @@ minikube kubectl -- create -f k8s-deployment.yaml
 
 ```shell
 minikube kubectl -- apply -f k8s-deployment.yaml
+```
+
+## Expose service
+```shell
+minikube service minikube-demo-service --url
 ```
