@@ -90,3 +90,7 @@ tasks.bootRun {
 gatling {
     logHttp = io.gatling.gradle.LogHttp.FAILURES
 }
+
+tasks.wrapper {
+    gradleVersion = "8.4"
+}

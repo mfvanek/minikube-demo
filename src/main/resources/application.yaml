@@ -3,6 +3,8 @@ spring:
   main:
     banner-mode: off
     lazy-initialization: false
+  lifecycle:
+    timeout-per-shutdown-phase: 20s
 
 logging:
   level:
@@ -20,6 +22,7 @@ server:
     threads:
       max: 10
       min-spare: 5 # actuator port uses the same configuration
+  shutdown: graceful
 
 management:
   server:
