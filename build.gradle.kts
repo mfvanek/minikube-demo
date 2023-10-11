@@ -38,6 +38,10 @@ dependencies {
     }
 }
 
+tasks.wrapper {
+    gradleVersion = "8.4"
+}
+
 tasks.withType<Test>().configureEach {
     useJUnitPlatform()
 }
