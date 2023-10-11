@@ -15,7 +15,7 @@ class WorkloadControllerTest extends TestBase {
         final OffsetDateTime result = webTestClient.get()
             .uri(uriBuilder ->
                 uriBuilder.path("/api/v1/workload/now")
-                    .queryParam("delayInMilliseconds", delay)
+                    .queryParam("delay", delay)
                     .build())
             .exchange()
             .expectStatus().isOk()

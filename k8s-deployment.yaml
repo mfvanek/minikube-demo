@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: minikube-demo
-  replicas: 5
+  replicas: 1
   template:
     metadata:
       labels:
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: minikube-demo
-          image: io.github.mfvanek/minikube-demo:0.2.0
+          image: io.github.mfvanek/minikube-demo:0.2.1
           imagePullPolicy: Never
           ports:
             - name: application
@@ -58,3 +58,20 @@ spec:
               cpu: 100m
               memory: 256Mi
       terminationGracePeriodSeconds: 30
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: minikube-demo-service
+spec:
+  type: NodePort
+  selector:
+    app: minikube-demo
+  ports:
+    - name: application-svc-port
+      protocol: TCP
+      port: 8080
+      targetPort: application
+      nodePort: 30036
