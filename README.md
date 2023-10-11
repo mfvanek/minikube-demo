@@ -20,6 +20,16 @@ curl -X PUT http://localhost:8080/delay -H "Content-Type: application/json" -d '
 curl -X GET "http://localhost:8080/api/v1/workload/now?delay=10"
 ```
 
+### Run Gatling
+```shell
+./gradlew gatlingRun
+```
+
+Or with custom params:
+```shell
+./gradlew gatlingRun -Drps=2 -DdurationSec=15 -DhostName=http://localhost:8080
+```
+
 ## Build docker image
 ## With curl
 ```shell

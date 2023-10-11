@@ -8,6 +8,7 @@ plugins {
     id("com.google.osdetector") version "1.7.3"
     id("io.freefair.lombok") version "8.4"
     id("com.github.ben-manes.versions") version "0.49.0"
+    id("io.gatling.gradle") version "3.9.5.6"
 }
 
 group = "io.github.mfvanek"
@@ -77,4 +78,15 @@ tasks.named<DependencyUpdatesTask>("dependencyUpdates").configure {
     rejectVersionIf {
         isNonStable(candidate.version)
     }
+}
+
+tasks.bootRun {
+    if (project.hasProperty("jvmArgs")) {
+        val jvmArgsFromCommandLine = project.properties["jvmArgs"].toString().split("\\s".toRegex())
+        jvmArgs = jvmArgsFromCommandLine
+    }
+}
+
+gatling {
+    logHttp = io.gatling.gradle.LogHttp.FAILURES
 }
