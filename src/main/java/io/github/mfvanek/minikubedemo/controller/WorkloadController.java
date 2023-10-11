@@ -17,7 +17,7 @@ public class WorkloadController {
 
     @SneakyThrows
     @GetMapping("/now")
-    public ResponseEntity<OffsetDateTime> nowWithDelay(@RequestParam final long delayInMilliseconds) {
+    public ResponseEntity<OffsetDateTime> nowWithDelay(@RequestParam("delay") final long delayInMilliseconds) {
         if (delayInMilliseconds >= 0) {
             TimeUnit.MILLISECONDS.sleep(delayInMilliseconds);
         } else {
