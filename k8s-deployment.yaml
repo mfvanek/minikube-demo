@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: minikube-demo
-          image: io.github.mfvanek/minikube-demo:0.1.6
+          image: io.github.mfvanek/minikube-demo:0.2.0
           imagePullPolicy: Never
           ports:
             - name: application
@@ -57,3 +57,4 @@ spec:
             requests:
               cpu: 100m
               memory: 256Mi
+      terminationGracePeriodSeconds: 30
