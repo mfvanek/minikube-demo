@@ -21,11 +21,7 @@ public class LoadSimulation extends Simulation {
             .disableFollowRedirect();
 
     private static final FeederBuilder<Object> DELAY_FEEDER = listFeeder(List.of(
-            Map.of("delay", 1000L),
-            Map.of("delay", 2000L),
-            Map.of("delay", 2500L),
-            Map.of("delay", 3000L),
-            Map.of("delay", 500L)
+            Map.of("delay", 10_000L)
     )).random();
 
     ScenarioBuilder scn = scenario("MinikubeDemoLoadSimulation")

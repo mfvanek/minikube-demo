@@ -14,8 +14,12 @@ spec:
     spec:
       containers:
         - name: minikube-demo
-          image: io.github.mfvanek/minikube-demo:0.2.1
+          image: io.github.mfvanek/minikube-demo:0.2.2
           imagePullPolicy: Never
+          lifecycle:
+            preStop:
+              exec:
+                command: ["sh", "-c", "sleep 120"]
           ports:
             - name: application
               containerPort: 8080
@@ -57,7 +61,7 @@ spec:
             requests:
               cpu: 100m
               memory: 256Mi
-      terminationGracePeriodSeconds: 30
+      terminationGracePeriodSeconds: 180
 
 ---
 

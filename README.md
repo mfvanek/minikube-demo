@@ -95,7 +95,7 @@ minikube dashboard
 
 ## Load image to minikube
 ```shell
-minikube image load io.github.mfvanek/minikube-demo:0.2.1
+minikube image load io.github.mfvanek/minikube-demo:0.2.2
 ```
 
 ```shell
@@ -107,6 +107,13 @@ minikube image ls --format table
 minikube kubectl -- run minikube-demo --image=io.github.mfvanek/minikube-demo:0.0.1 --port=8080 --image-pull-policy Never
 minikube kubectl -- get pods
 minikube kubectl -- delete pod minikube-demo
+```
+
+### Get pod details
+```shell
+minikube kubectl -- get pods
+minikube kubectl get endpoints
+minikube kubectl describe svc minikube-demo-service
 ```
 
 ## Deploy to minikube
