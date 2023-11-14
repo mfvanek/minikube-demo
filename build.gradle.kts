@@ -3,8 +3,8 @@ import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 plugins {
     id("java")
     id("org.springframework.boot") version "3.1.5"
-    id("io.spring.dependency-management") version "1.1.3"
-    id("com.bmuschko.docker-java-application") version "9.3.6"
+    id("io.spring.dependency-management") version "1.1.4"
+    id("com.bmuschko.docker-java-application") version "9.3.7"
     id("com.google.osdetector") version "1.7.3"
     id("io.freefair.lombok") version "8.4"
     id("com.github.ben-manes.versions") version "0.49.0"
@@ -24,7 +24,7 @@ repositories {
 }
 
 dependencies {
-    implementation("io.micrometer:micrometer-registry-prometheus:1.11.5")
+    implementation("io.micrometer:micrometer-registry-prometheus:1.12.0")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("com.google.code.findbugs:jsr305:3.0.2")
