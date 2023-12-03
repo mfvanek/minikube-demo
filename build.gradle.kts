@@ -4,7 +4,7 @@ plugins {
     id("java")
     id("org.springframework.boot") version "3.2.0"
     id("io.spring.dependency-management") version "1.1.4"
-    id("com.bmuschko.docker-java-application") version "9.3.7"
+    id("com.bmuschko.docker-java-application") version "9.4.0"
     id("com.google.osdetector") version "1.7.3"
     id("io.freefair.lombok") version "8.4"
     id("com.github.ben-manes.versions") version "0.50.0"
@@ -12,11 +12,15 @@ plugins {
 }
 
 group = "io.github.mfvanek"
-version = "0.2.2"
+version = "0.2.3"
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+tasks.withType<JavaCompile>().configureEach {
+    options.compilerArgs.add("-parameters")
 }
 
 repositories {
@@ -92,5 +96,5 @@ gatling {
 }
 
 tasks.wrapper {
-    gradleVersion = "8.4"
+    gradleVersion = "8.5"
 }
