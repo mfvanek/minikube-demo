@@ -8,7 +8,7 @@ plugins {
     id("com.google.osdetector") version "1.7.3"
     id("io.freefair.lombok") version "8.4"
     id("com.github.ben-manes.versions") version "0.50.0"
-    id("io.gatling.gradle") version "3.9.5.6"
+    id("io.gatling.gradle") version "3.10.0"
 }
 
 group = "io.github.mfvanek"
