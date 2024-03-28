@@ -9,7 +9,7 @@ plugins {
     id("com.google.osdetector") version "1.7.3"
     id("io.freefair.lombok") version "8.6"
     id("com.github.ben-manes.versions") version "0.51.0"
-    id("io.gatling.gradle") version "3.10.4"
+    id("io.gatling.gradle") version "3.10.5"
     id("net.ltgt.errorprone") version "3.1.0"
 }
 
@@ -45,11 +45,11 @@ dependencies {
 
     // https://github.com/netty/netty/issues/11020
     if (osdetector.arch == "aarch_64") {
-        testImplementation("io.netty:netty-all:4.1.107.Final")
+        testImplementation("io.netty:netty-all:4.1.108.Final")
     }
 
     errorprone("com.google.errorprone:error_prone_core:2.26.1")
-    errorprone("jp.skypencil.errorprone.slf4j:errorprone-slf4j:0.1.22")
+    errorprone("jp.skypencil.errorprone.slf4j:errorprone-slf4j:0.1.23")
 }
 
 tasks.withType<Test>().configureEach {
