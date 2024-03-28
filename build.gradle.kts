@@ -49,7 +49,7 @@ dependencies {
     }
 
     errorprone("com.google.errorprone:error_prone_core:2.26.1")
-    errorprone("jp.skypencil.errorprone.slf4j:errorprone-slf4j:0.1.22")
+    errorprone("jp.skypencil.errorprone.slf4j:errorprone-slf4j:0.1.23")
 }
 
 tasks.withType<Test>().configureEach {
