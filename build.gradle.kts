@@ -45,11 +45,11 @@ dependencies {
 
     // https://github.com/netty/netty/issues/11020
     if (osdetector.arch == "aarch_64") {
-        testImplementation("io.netty:netty-all:4.1.107.Final")
+        testImplementation("io.netty:netty-all:4.1.108.Final")
     }
 
     errorprone("com.google.errorprone:error_prone_core:2.26.1")
-    errorprone("jp.skypencil.errorprone.slf4j:errorprone-slf4j:0.1.22")
+    errorprone("jp.skypencil.errorprone.slf4j:errorprone-slf4j:0.1.23")
 }
 
 tasks.withType<Test>().configureEach {
