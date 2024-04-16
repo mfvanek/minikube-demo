@@ -45,7 +45,7 @@ dependencies {
 
     // https://github.com/netty/netty/issues/11020
     if (osdetector.arch == "aarch_64") {
-        testImplementation("io.netty:netty-all:4.1.108.Final")
+        testImplementation("io.netty:netty-all:4.1.109.Final")
     }
 
     errorprone("com.google.errorprone:error_prone_core:2.26.1")
