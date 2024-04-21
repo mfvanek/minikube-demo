@@ -3,7 +3,7 @@ import net.ltgt.gradle.errorprone.errorprone
 
 plugins {
     id("java")
-    id("org.springframework.boot") version "3.2.4"
+    id("org.springframework.boot") version "3.2.5"
     id("io.spring.dependency-management") version "1.1.4"
     id("com.bmuschko.docker-java-application") version "9.4.0"
     id("com.google.osdetector") version "1.7.3"
@@ -31,6 +31,12 @@ tasks.withType<JavaCompile>().configureEach {
 
 repositories {
     mavenCentral()
+}
+
+dependencyManagement {
+    imports {
+        mavenBom("org.assertj:assertj-bom:3.25.3")
+    }
 }
 
 dependencies {
@@ -106,4 +112,8 @@ gatling {
 
 tasks.wrapper {
     gradleVersion = "8.7"
+}
+
+lombok {
+    version = "1.18.32"
 }
