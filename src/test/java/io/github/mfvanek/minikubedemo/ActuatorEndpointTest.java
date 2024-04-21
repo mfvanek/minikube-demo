@@ -1,11 +1,6 @@
 package io.github.mfvanek.minikubedemo;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 import io.github.mfvanek.minikubedemo.support.TestBase;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
-import javax.annotation.Nonnull;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -13,6 +8,11 @@ import org.junit.jupiter.params.provider.CsvSource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.reactive.server.WebTestClient;
+
+import javax.annotation.Nonnull;
+import java.nio.charset.StandardCharsets;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 class ActuatorEndpointTest extends TestBase {
 
@@ -70,6 +70,19 @@ class ActuatorEndpointTest extends TestBase {
             .getResponseBody();
         assertThat(result)
             .isEqualTo("{\"status\":\"UP\",\"components\":{\"managable\":{\"status\":\"UP\"},\"readinessState\":{\"status\":\"UP\"}}}");
+
+        final String metricsResult = actuatorClient.get()
+                .uri(uriBuilder -> uriBuilder
+                        .path("prometheus")
+                        .build())
+                .accept(MediaType.valueOf("text/plain"))
+                .exchange()
+                .expectStatus().isOk()
+                .expectBody(String.class)
+                .returnResult()
+                .getResponseBody();
+        assertThat(metricsResult)
+                .contains("http_server_requests_seconds_bucket");
     }
 
     @Test
