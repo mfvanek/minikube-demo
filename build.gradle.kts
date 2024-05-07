@@ -55,7 +55,7 @@ dependencies {
     }
 
     errorprone("com.google.errorprone:error_prone_core:2.27.0")
-    errorprone("jp.skypencil.errorprone.slf4j:errorprone-slf4j:0.1.23")
+    errorprone("jp.skypencil.errorprone.slf4j:errorprone-slf4j:0.1.24")
 }
 
 tasks.withType<Test>().configureEach {
