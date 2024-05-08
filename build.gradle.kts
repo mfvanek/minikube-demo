@@ -4,7 +4,7 @@ import net.ltgt.gradle.errorprone.errorprone
 plugins {
     id("java")
     id("org.springframework.boot") version "3.2.5"
-    id("io.spring.dependency-management") version "1.1.4"
+    id("io.spring.dependency-management") version "1.1.5"
     id("com.bmuschko.docker-java-application") version "9.4.0"
     id("com.google.osdetector") version "1.7.3"
     id("io.freefair.lombok") version "8.6"
