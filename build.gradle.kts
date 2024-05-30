@@ -3,7 +3,7 @@ import net.ltgt.gradle.errorprone.errorprone
 
 plugins {
     id("java")
-    id("org.springframework.boot") version "3.2.5"
+    id("org.springframework.boot") version "3.3.0"
     id("io.spring.dependency-management") version "1.1.5"
     id("com.bmuschko.docker-java-application") version "9.4.0"
     id("com.google.osdetector") version "1.7.3"
@@ -35,7 +35,7 @@ repositories {
 
 dependencyManagement {
     imports {
-        mavenBom("org.assertj:assertj-bom:3.25.3")
+        mavenBom("org.assertj:assertj-bom:3.26.0")
     }
 }
 
@@ -51,7 +51,7 @@ dependencies {
 
     // https://github.com/netty/netty/issues/11020
     if (osdetector.arch == "aarch_64") {
-        testImplementation("io.netty:netty-all:4.1.109.Final")
+        testImplementation("io.netty:netty-all:4.1.110.Final")
     }
 
     errorprone("com.google.errorprone:error_prone_core:2.27.1")
