@@ -10,7 +10,7 @@ plugins {
     id("io.freefair.lombok") version "8.6"
     id("com.github.ben-manes.versions") version "0.51.0"
     id("io.gatling.gradle") version "3.10.5.1"
-    id("net.ltgt.errorprone") version "4.0.0"
+    id("net.ltgt.errorprone") version "4.0.1"
 }
 
 group = "io.github.mfvanek"
