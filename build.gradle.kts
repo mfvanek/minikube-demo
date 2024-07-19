@@ -3,7 +3,7 @@ import net.ltgt.gradle.errorprone.errorprone
 
 plugins {
     id("java")
-    id("org.springframework.boot") version "3.3.1"
+    id("org.springframework.boot") version "3.3.2"
     id("io.spring.dependency-management") version "1.1.6"
     id("com.bmuschko.docker-java-application") version "9.4.0"
     id("com.google.osdetector") version "1.7.3"
@@ -14,7 +14,7 @@ plugins {
 }
 
 group = "io.github.mfvanek"
-version = "0.2.4"
+version = "0.2.5"
 
 java {
     toolchain {
@@ -54,7 +54,7 @@ dependencies {
         testImplementation("io.netty:netty-all:4.1.111.Final")
     }
 
-    errorprone("com.google.errorprone:error_prone_core:2.29.0")
+    errorprone("com.google.errorprone:error_prone_core:2.29.2")
     errorprone("jp.skypencil.errorprone.slf4j:errorprone-slf4j:0.1.25")
 }
 
@@ -111,9 +111,9 @@ gatling {
 }
 
 tasks.wrapper {
-    gradleVersion = "8.7"
+    gradleVersion = "8.9"
 }
 
 lombok {
-    version = "1.18.32"
+    version = "1.18.34"
 }
