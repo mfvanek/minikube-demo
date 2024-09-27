@@ -3,13 +3,13 @@ import net.ltgt.gradle.errorprone.errorprone
 
 plugins {
     id("java")
-    id("org.springframework.boot") version "3.3.3"
+    id("org.springframework.boot") version "3.3.4"
     id("io.spring.dependency-management") version "1.1.6"
     id("com.bmuschko.docker-java-application") version "9.4.0"
     id("com.google.osdetector") version "1.7.3"
     id("io.freefair.lombok") version "8.10"
     id("com.github.ben-manes.versions") version "0.51.0"
-    id("io.gatling.gradle") version "3.12.0"
+    id("io.gatling.gradle") version "3.12.0.1"
     id("net.ltgt.errorprone") version "4.0.1"
 }
 
