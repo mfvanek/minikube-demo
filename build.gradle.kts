@@ -9,7 +9,7 @@ plugins {
     id("com.google.osdetector") version "1.7.3"
     id("io.freefair.lombok") version "8.10.2"
     id("com.github.ben-manes.versions") version "0.51.0"
-    id("io.gatling.gradle") version "3.12.0.2"
+    id("io.gatling.gradle") version "3.12.0.3"
     id("net.ltgt.errorprone") version "4.0.1"
 }
 
