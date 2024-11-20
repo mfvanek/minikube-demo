@@ -9,7 +9,7 @@ plugins {
     id("com.google.osdetector") version "1.7.3"
     id("io.freefair.lombok") version "8.11"
     id("com.github.ben-manes.versions") version "0.51.0"
-    id("io.gatling.gradle") version "3.12.0.4"
+    id("io.gatling.gradle") version "3.13.1"
     id("net.ltgt.errorprone") version "4.1.0"
 }
 
@@ -54,7 +54,7 @@ dependencies {
         testImplementation("io.netty:netty-all:4.1.115.Final")
     }
 
-    errorprone("com.google.errorprone:error_prone_core:2.35.1")
+    errorprone("com.google.errorprone:error_prone_core:2.36.0")
     errorprone("jp.skypencil.errorprone.slf4j:errorprone-slf4j:0.1.28")
 }
 
