@@ -35,7 +35,7 @@ repositories {
 
 dependencyManagement {
     imports {
-        mavenBom("org.assertj:assertj-bom:3.27.2")
+        mavenBom("org.assertj:assertj-bom:3.27.3")
     }
 }
 
