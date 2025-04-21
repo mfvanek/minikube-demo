@@ -9,8 +9,8 @@ plugins {
     id("com.google.osdetector") version "1.7.3"
     id("io.freefair.lombok") version "8.13.1"
     id("com.github.ben-manes.versions") version "0.52.0"
-    id("io.gatling.gradle") version "3.13.5.2"
-    id("net.ltgt.errorprone") version "4.1.0"
+    id("io.gatling.gradle") version "3.13.5.4"
+    id("net.ltgt.errorprone") version "4.2.0"
 }
 
 group = "io.github.mfvanek"
@@ -54,7 +54,7 @@ dependencies {
         testImplementation("io.netty:netty-all:4.2.0.Final")
     }
 
-    errorprone("com.google.errorprone:error_prone_core:2.37.0")
+    errorprone("com.google.errorprone:error_prone_core:2.38.0")
     errorprone("jp.skypencil.errorprone.slf4j:errorprone-slf4j:0.1.28")
 }
 
@@ -107,9 +107,9 @@ tasks.bootRun {
 }
 
 tasks.wrapper {
-    gradleVersion = "8.9"
+    gradleVersion = "8.13"
 }
 
 lombok {
-    version = "1.18.34"
+    version = "1.18.38"
 }
