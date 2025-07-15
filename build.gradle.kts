@@ -54,7 +54,7 @@ dependencies {
         testImplementation("io.netty:netty-all:4.2.2.Final")
     }
 
-    errorprone("com.google.errorprone:error_prone_core:2.39.0")
+    errorprone("com.google.errorprone:error_prone_core:2.40.0")
     errorprone("jp.skypencil.errorprone.slf4j:errorprone-slf4j:0.1.29")
 }
 
