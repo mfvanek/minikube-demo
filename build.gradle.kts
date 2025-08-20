@@ -7,7 +7,7 @@ plugins {
     id("io.spring.dependency-management") version "1.1.7"
     id("com.bmuschko.docker-java-application") version "9.4.0"
     id("com.google.osdetector") version "1.7.3"
-    id("io.freefair.lombok") version "8.14"
+    id("io.freefair.lombok") version "8.14.2"
     id("com.github.ben-manes.versions") version "0.52.0"
     id("io.gatling.gradle") version "3.14.3.5"
     id("net.ltgt.errorprone") version "4.3.0"
